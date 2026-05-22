@@ -13,30 +13,30 @@ pub type Words = usize;
 #[macro_export]
 macro_rules! inst {
     (ref, $op1:expr, $op2:expr) => {
-        crate::Instruction::Reference(crate::Operand::Variable($op1.to_string()), $op2.to_string())
+        $crate::Instruction::Reference($crate::Operand::Variable($op1.to_string()), $op2.to_string())
     };
     (rec, $op1:expr, $op2:expr) => {
-        crate::Instruction::Receive(Operand::Variable($op1.to_string()), $op2)
+        $crate::Instruction::Receive(Operand::Variable($op1.to_string()), $op2)
     };
     ($opcode:ident, $op1:expr, $op2:expr) => {
-        crate::Instruction::TwoOp(crate::TwoOpOpcode::$opcode, crate::Operand::Variable($op1.to_string()), crate::Operand::Variable($op2.to_string()))
+        $crate::Instruction::TwoOp($crate::TwoOpOpcode::$opcode, $crate::Operand::Variable($op1.to_string()), $crate::Operand::Variable($op2.to_string()))
     };
     ($opcode:ident, $op1:expr, val $op2:expr) => {
-        crate::Instruction::TwoOp(crate::TwoOpOpcode::$opcode, crate::Operand::Variable($op1.to_string()), crate::Operand::Constant($op2))
+        $crate::Instruction::TwoOp($crate::TwoOpOpcode::$opcode, $crate::Operand::Variable($op1.to_string()), $crate::Operand::Constant($op2))
     };
     ($opcode:ident, val $op1:expr, val $op2:expr) => {
-        crate::Instruction::TwoOp(crate::TwoOpOpcode::$opcode, crate::Operand::Constant($op1), crate::Operand::Constant($op2))
+        $crate::Instruction::TwoOp($crate::TwoOpOpcode::$opcode, $crate::Operand::Constant($op1), $crate::Operand::Constant($op2))
     };
     ($opcode:ident, val $op1:expr, $op2:expr) => {
-        crate::Instruction::TwoOp(crate::TwoOpOpcode::$opcode, crate::Operand::Constant($op1), crate::Operand::Variable($op2.to_string()))
+        $crate::Instruction::TwoOp($crate::TwoOpOpcode::$opcode, $crate::Operand::Constant($op1), $crate::Operand::Variable($op2.to_string()))
     };
     ($opcode:ident, $op:expr) => {
-        crate::Instruction::SingleOp(crate::SingleOpOpcode::$opcode, crate::Operand::Variable($op.to_string()))
+        $crate::Instruction::SingleOp($crate::SingleOpOpcode::$opcode, $crate::Operand::Variable($op.to_string()))
     };
     ($opcode:ident, val $op:expr) => {
-        crate::Instruction::SingleOp(crate::SingleOpOpcode::$opcode, crate::Operand::Constant($op))
+        $crate::Instruction::SingleOp($crate::SingleOpOpcode::$opcode, $crate::Operand::Constant($op))
     };
     ($opcode:ident) => {
-        crate::Instruction::NoOp(crate::NoOpOpcode::$opcode)
+        $crate::Instruction::NoOp($crate::NoOpOpcode::$opcode)
     };
 }
