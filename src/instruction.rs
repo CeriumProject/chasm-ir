@@ -1,5 +1,6 @@
 use crate::{NoOpOpcode, Operand, SingleOpOpcode, TwoOpOpcode, Words};
 
+#[derive(Debug, Clone)]
 pub enum Instruction {
     Sublabel(String),
     Alloc(String, Words, Vec<Instruction>),

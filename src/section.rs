@@ -1,7 +1,8 @@
 use crate::{Instruction, Words};
 
+#[derive(Debug, Clone)]
 pub struct Section {
     pub name: String,
-    pub signature: Option<(Vec<(String, Words)>, Option<Words>)>,
+    pub signature: Option<(Words, Vec<(String, Words)>)>,
     pub body: Vec<Instruction>,
 }
