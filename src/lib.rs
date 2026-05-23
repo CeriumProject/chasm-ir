@@ -60,4 +60,17 @@ macro_rules! inst {
     ($opcode:ident) => {
         $crate::Instruction::NoOp($crate::NoOpOpcode::$opcode)
     };
+
+    (alloc $name:ident[$size:expr]) => {
+        $crate::Instruction::Alloc($name, $size)
+    };
+    (param $name:ident[$size:expr]) => {
+        $crate::Instruction::Param($name, $size)
+    };
+    (result $name:ident[$size:expr]) => {
+        $crate::Instruction::Result($name, $size)
+    };
+    (dealloc) => {
+        $crate::Instruction::Dealloc
+    };
 }
