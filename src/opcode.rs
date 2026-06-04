@@ -18,6 +18,10 @@ pub enum TwoOpOpcode {
     Idiv,
     Shr,
     Shl,
+    Itof,
+    Utof,
+    Ftoi,
+    Ftou,
 }
 
 #[derive(Debug, Clone)]
