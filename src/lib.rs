@@ -2,6 +2,7 @@ mod section;
 mod operand;
 mod instruction;
 mod opcode;
+pub mod iter;
 
 pub use section::Section;
 pub use operand::Operand;
