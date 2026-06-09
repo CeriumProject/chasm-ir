@@ -22,13 +22,13 @@ pub enum TwoOpOpcode {
     Utof,
     Ftoi,
     Ftou,
+    Ctx,
 }
 
 #[derive(Debug, Clone)]
 pub enum SingleOpOpcode {
     Call,
     Jmp,
-    Ctx,
 }
 
 #[derive(Debug, Clone)]
