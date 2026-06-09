@@ -28,10 +28,12 @@ pub enum TwoOpOpcode {
 pub enum SingleOpOpcode {
     Call,
     Jmp,
+    Ctx,
 }
 
 #[derive(Debug, Clone)]
 pub enum NoOpOpcode {
     Nop,
     Ret,
+    Send,
 }
