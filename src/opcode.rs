@@ -29,6 +29,7 @@ pub enum TwoOpOpcode {
 pub enum SingleOpOpcode {
     Call,
     Jmp,
+    Dbg,
 }
 
 #[derive(Debug, Clone)]
