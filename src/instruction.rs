@@ -14,4 +14,5 @@ pub enum Instruction {
     SingleOp(SingleOpOpcode, Operand),
     NoOp(NoOpOpcode),
     RawWords(Vec<Operand>),
+    Definition(String, Operand),
 }
