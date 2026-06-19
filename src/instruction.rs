@@ -54,8 +54,8 @@ impl Instruction {
                 }
                 writeln!(f, "{prefix}}}")
             }
-            Instruction::Reference(dst, variable) => writeln!(f, "{prefix}ref {dst:?}, {variable}"),
-            Instruction::Receive(dst, offset) => writeln!(f, "{prefix}rec {dst:?}, {offset}"),
+            Instruction::Reference(dst, variable) => writeln!(f, "{prefix}ref {dst:?} {variable}"),
+            Instruction::Receive(dst, offset) => writeln!(f, "{prefix}rec {dst:?} {offset}"),
             Instruction::TwoOp(opcode, op1, op2) => writeln!(f, "{prefix}{opcode} {op1:?} {op2:?}"),
             Instruction::SingleOp(opcode, op1) => writeln!(f, "{prefix}{opcode} {op1:?}"),
             Instruction::NoOp(opcode) => writeln!(f, "{prefix}{opcode}"),
