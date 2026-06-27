@@ -25,6 +25,9 @@ pub enum TwoOpOpcode {
     Ftoi,
     Ftou,
     Ctx,
+    And,
+    Or,
+    Xor,
 }
 
 #[derive(Debug, Clone)]
