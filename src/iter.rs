@@ -32,12 +32,16 @@ pub trait IntoInstIter {
 
 impl IntoInstIter for Vec<Instruction> {
     fn iter_rec(&'_ self) -> InstIter<'_> {
-        InstIter { stack: vec![self.iter()] }
+        InstIter {
+            stack: vec![self.iter()],
+        }
     }
 }
 
 impl IntoInstIter for Section {
     fn iter_rec(&'_ self) -> InstIter<'_> {
-        InstIter { stack: vec![self.body.iter()] }
+        InstIter {
+            stack: vec![self.body.iter()],
+        }
     }
 }

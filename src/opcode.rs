@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 #[derive(Debug, Clone)]
 pub enum TwoOpOpcode {
     Mov,
@@ -25,6 +27,9 @@ pub enum TwoOpOpcode {
     Ftoi,
     Ftou,
     Ctx,
+    And,
+    Or,
+    Xor,
 }
 
 #[derive(Debug, Clone)]
@@ -39,4 +44,22 @@ pub enum NoOpOpcode {
     Nop,
     Ret,
     Send,
+}
+
+impl Display for TwoOpOpcode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", format!("{:?}", self).to_lowercase())
+    }
+}
+
+impl Display for SingleOpOpcode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", format!("{:?}", self).to_lowercase())
+    }
+}
+
+impl Display for NoOpOpcode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", format!("{:?}", self).to_lowercase())
+    }
 }
