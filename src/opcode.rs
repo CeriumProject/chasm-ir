@@ -8,6 +8,8 @@ pub enum TwoOpOpcode {
     Sub,
     Mul,
     Div,
+    Jrnz,
+    Jrz,
     Jrnzdec,
     Lookup,
     Fadd,
